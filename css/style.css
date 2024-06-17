@@ -1,0 +1,28 @@
+/* import fonts */
+/* set root brand colors */
+:root {
+	/* add ovo and nunito sans */
+	--white: #FFFFFF;
+	--wheat: #fff0cb; 
+	--carrot: #f49619; 
+	--maize: #f2ae1c;
+	--earth: #af7a1f;
+	--pine: #4C7031;
+	--black: #000000;
+}
+/* mobile first design */
+	/* h1, h2, h3, body for fonts */
+	/* header is a grid with two children, double border on bottom */
+	/* div for h1, h2, and logo is grid */
+	/* Nav ul display flex text-decoration none */
+	/* buttons */
+	/* footer */
+
+/* media queries  */
+/* @ min-width 700 px */
+	/* side nav is hidden, hamburger is hidden, normal nav displays  */
+	/* cards display horizontally */
+	/* title is above nav */
+/* @ min-width 900 px */
+	/* title is next to nav, they look like flex space between */
+
