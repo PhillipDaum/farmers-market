@@ -1,24 +1,128 @@
 /* import fonts */
-/* set root brand colors */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Ovo&display=swap');
+/* style guide: https://docs.google.com/document/d/13U7XiDktQjgR3cUROSog0uell0MoMwNGHXf91zcV338/edit */
+/* set root brand colors and fonts */
 :root {
-	/* add ovo and nunito sans */
-	--white: #FFFFFF;
-	--wheat: #fff0cb; 
-	--carrot: #f49619; 
-	--maize: #f2ae1c;
-	--earth: #af7a1f;
-	--pine: #4C7031;
+	--ovo: "Ovo", serif;
+	--nunito-sans: "Nunito Sans", sans-serif;
 	--black: #000000;
+	--pine: #4C7031;
+	--ironstone: #824737;
+	--rust: #b55232;
+	--carrot: #f49619; 
+	--cream: #fff0cb;
+	--white: #FFFFFF;
 }
 /* mobile first design */
-	/* h1, h2, h3, body for fonts */
-	/* header is a grid with two children, double border on bottom */
-	/* div for h1, h2, and logo is grid */
-	/* Nav ul display flex text-decoration none */
-	/* buttons */
-	/* footer */
+/* h1, h2, h3, body for fonts */
+body {
+	font-size: 1.1rem;
+	font-family: var(--nunito-sans);
+	/* use zero not none cuz it overrides */
+	padding: 0;
+	margin: 0;
+}
+h1 {
+	/* holds the logo ?? */
+	/* can split logo away and use - div for h1, h2, and logo is grid */
+	font-family: var(--ovo);
+	/* adding margin: 0 aligned top of header with top of document */
+	margin: 0;
+}
+h2 {
+	font-size: 2.5rem;
+	font-family: var(--ovo);
+}
+h3 {
+	font-size: 2rem;
+	font-family: var(--ovo);
+}
+/* added h4 in order to resolve h1, logo issue later */
+h4 {
+	font-size: 2rem;
+	font-family: var(--ovo);
+}
+/* header is a grid with two children, double border on bottom */
+header {
+	background-color: var(--cream);
+	/* tweek this - not full width*/
+	border-bottom: var(--rust) 1rem double;
+}
+/* Nav ul display flex text-decoration none */
+/* hide this! */
+nav ul {
+	list-style: none;
+	display: flex;
+	gap: .2rem;
+}
+nav a {
+	text-decoration: none;
+	/* this color will actually go in the media query! */
+	color: var(--pine);
+	text-transform: uppercase;
+}
+/* hero section */
+.hero {
+	display: flex;
+	color: var(--rust);
+	align-items: center;
+	justify-content: center;
+	/* center stuff make it look right */
+	background-image: url("https://images.pexels.com/photos/603030/pexels-photo-603030.jpeg");
+	/* can height be done better */
+	height: 30vh;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+/* heading above cards */
+.content-wrapper {
+	margin: 2rem;
+}
+/* cards-wrapper */
+.cards-wrapper {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+}
+/* cards */
+.card {
+	/* tweek, spacing seems just slightly different than example */
+	display: flex;
+	flex-direction: column;
+	margin: .1rem;
+}
+.card img {
+	max-width: 100%;
+	/* tweek */
+	border-radius: .3rem;
+}
+/* buttons on cards*/
+.card .button a {
+	text-decoration: none;
+	/* tweek all  */
+	/* is this white or cream? */
+	color: var(--white);
+	background-color: var(--pine);
+	padding: .3rem .6rem;
+	border-radius: .4rem;
+}
+.card .button a:hover {
+	cursor: pointer;
+}
+/* footer */
+footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--pine);
+	color:var(--white);
+	/* tweek */
+	height: 30vh;
+	border-top: var(--carrot) double .6rem;
+}
 
 /* media queries  */
+@media (min-width: 700px)
 /* @ min-width 700 px */
 	/* side nav is hidden, hamburger is hidden, normal nav displays  */
 	/* cards display horizontally */
