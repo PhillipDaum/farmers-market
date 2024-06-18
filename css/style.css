@@ -44,21 +44,47 @@ h4 {
 }
 /* header is a grid with two children, double border on bottom */
 header {
+	display: flex;
+	justify-content: center;
+	grid-template-columns: 1fr;
 	background-color: var(--cream);
-	/* tweek this - not full width*/
 	border-bottom: var(--rust) 1rem double;
 }
 /* Nav ul display flex text-decoration none */
 /* hide this! */
+.burger{
+	font-size: 1.2em;
+	/* tweak */
+	padding: .3rem;
+	margin: 1rem;
+  } 
+.nav {
+	margin: 0;
+    background: var(--ironstone);
+    position: absolute;
+    right: -100%;
+    width: 50%;
+	display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100vh;
+    padding: 0;
+    transition: all 400ms;
+}
+/* transfer this stuff to the right spots  */
+.nav-active {
+    right: 0;
+  }
 nav ul {
 	list-style: none;
-	display: flex;
-	gap: .2rem;
+}
+nav li{
+	text-align: center;
 }
 nav a {
 	text-decoration: none;
 	/* this color will actually go in the media query! */
-	color: var(--pine);
+	color: var(--cream);
 	text-transform: uppercase;
 }
 /* hero section */
@@ -86,20 +112,20 @@ nav a {
 }
 /* cards */
 .card {
-	/* tweek, spacing seems just slightly different than example */
+	/* tweak, spacing seems just slightly different than example */
 	display: flex;
 	flex-direction: column;
 	margin: .1rem;
 }
 .card img {
 	max-width: 100%;
-	/* tweek */
+	/* tweak */
 	border-radius: .3rem;
 }
 /* buttons on cards*/
 .card .button a {
 	text-decoration: none;
-	/* tweek all  */
+	/* tweak all  */
 	/* is this white or cream? */
 	color: var(--white);
 	background-color: var(--pine);
@@ -116,17 +142,24 @@ footer {
 	justify-content: center;
 	background-color: var(--pine);
 	color:var(--white);
-	/* tweek */
+	/* tweak */
 	height: 30vh;
 	border-top: var(--carrot) double .6rem;
 }
 
 /* media queries  */
-@media (min-width: 700px)
+@media (min-width: 700px) {
+	.nav {
+		display: flex;
+		gap: .2rem;
+	}
+	.burger {
+		display: none;
+	}
+}
 /* @ min-width 700 px */
 	/* side nav is hidden, hamburger is hidden, normal nav displays  */
 	/* cards display horizontally */
 	/* title is above nav */
 /* @ min-width 900 px */
 	/* title is next to nav, they look like flex space between */
-
