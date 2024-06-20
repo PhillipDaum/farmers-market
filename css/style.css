@@ -50,8 +50,6 @@ header {
 	background-color: var(--cream);
 	border-bottom: var(--rust) 1rem double;
 }
-/* Nav ul display flex text-decoration none */
-/* hide this! */
 .burger{
 	font-size: 1.2em;
 	/* tweak */
@@ -66,12 +64,11 @@ header {
     width: 50%;
 	display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
     height: 100vh;
     padding: 0;
     transition: all 400ms;
 }
-/* transfer this stuff to the right spots  */
 .nav-active {
     right: 0;
   }
@@ -80,10 +77,10 @@ nav ul {
 }
 nav li{
 	text-align: center;
+	padding-top: 2rem;
 }
 nav a {
 	text-decoration: none;
-	/* this color will actually go in the media query! */
 	color: var(--cream);
 	text-transform: uppercase;
 }
@@ -93,7 +90,6 @@ nav a {
 	color: var(--rust);
 	align-items: center;
 	justify-content: center;
-	/* center stuff make it look right */
 	background-image: url("https://images.pexels.com/photos/603030/pexels-photo-603030.jpeg");
 	/* can height be done better */
 	height: 30vh;
@@ -108,6 +104,7 @@ nav a {
 .cards-wrapper {
 	display: grid;
 	grid-template-columns: 1fr;
+	gap: .5rem;
 	grid-template-rows: auto;
 }
 /* cards */
@@ -118,7 +115,8 @@ nav a {
 	margin: .1rem;
 }
 .card img {
-	max-width: 100%;
+	width: 100%;
+	margin-top: 0;
 	/* tweak */
 	border-radius: .3rem;
 }
@@ -149,12 +147,75 @@ footer {
 
 /* media queries  */
 @media (min-width: 700px) {
-	.nav {
-		display: flex;
-		gap: .2rem;
-	}
 	.burger {
 		display: none;
+	}
+	.cards-wrapper {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	.nav {
+		/* revert keyword seems cool */
+		margin: revert;
+		background: revert;
+		position: revert;
+		right: revert;
+		width: revert;
+		display: flex;
+		flex-direction: revert;
+		justify-content: center;
+		gap: .5rem;
+		height: revert;
+		padding: revert;
+		transition: revert;
+		width: 100%;
+		margin: auto;
+		grid-row: 2/3;
+		padding-bottom: .5rem;
+	}
+	.nav-active {
+		right: revert;
+	  }
+	nav ul {
+		list-style: none;
+	}
+	nav li{
+		text-align: center;
+		padding-top: 0;
+	}
+	nav a {
+		color: var(--pine);
+	}
+	header {
+		display: grid;
+		width: 100%;
+		margin: auto;
+		grid-template-columns: 1fr;
+	}
+	h1 {
+		margin: auto;
+		width: 100%;
+		display: flex;
+	}
+	img {
+		margin: auto;
+		width: 70%;
+	}
+	.heading {
+		grid-row: 1/2;
+	}
+}
+@media (min-width: 915px) {
+	header {
+		display: flex;
+		/* row reverse was handy */
+		flex-direction: row-reverse;
+		justify-content: space-between;
+		padding-bottom: 2rem;
+	}
+	nav {
+		display: flex;
+		padding-right: .5rem;
+		padding-top: 2.6rem;
 	}
 }
 /* @ min-width 700 px */
