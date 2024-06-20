@@ -157,7 +157,7 @@ footer {
 		grid-template-columns: repeat(3, 1fr);
 	}
 	.nav {
-		/* revert keyword seems cool */
+		/* revert value seems cool */
 		margin: revert;
 		background: revert;
 		position: revert;
